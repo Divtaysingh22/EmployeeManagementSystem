@@ -1,0 +1,19 @@
+
+<%=form_for @employee do |f|%>
+	<label>First Name</label>
+	<%=f.text_field :name%>
+	<br>
+	<label>Last Name</label>
+	<%=f.text_field :last_name%>
+	<br>
+	<label>Age</label>
+	<%=f.text_field :age%>
+	<br>
+	<label>Department Name</label>
+	<%=f.select :department_id, Department.all.pluck(:department_name, :id)%>
+	<br>
+	<label>Project Name</label>
+	<%=f.select :project_id, Project.all.pluck(:project_name, :id)%>
+	<br>
+	<%=f.submit "Create Employee"%>
+<% end -%>

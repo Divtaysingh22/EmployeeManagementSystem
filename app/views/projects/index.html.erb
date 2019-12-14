@@ -1,0 +1,21 @@
+<table>
+	<thead>
+		<th>Project Name</th>
+		<th>Description</th>
+		
+	</thead>
+	<tbody>
+		<%-@projects.each do |emp|%>
+		<tr>
+			<td><%=emp.project_name%></td>
+			<td><%=emp.description%></td>
+			
+			<td><%=link_to "Remove", project_path(emp), method: :delete %></td>
+			<td><%=link_to "Edit", edit_project_path(emp) %></td>
+			<td><%=link_to "Show", project_path(emp) %></td>
+		</tr>
+		<%end%>
+		
+	</tbody>
+</table>
+<a href="/projects/new", style="color: #FF3377">Create Project</a>

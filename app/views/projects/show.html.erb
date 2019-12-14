@@ -1,0 +1,17 @@
+<table>
+	<thead>
+		<th>Project Name</th>
+	    <th>Employee Name</th>
+	</thead>
+	<tbody>
+	<td><%=@projects.project_name%></td>	
+    
+    <%-@projects.employees.each do |emp|%>
+		
+			<td><%=emp.name%></td>
+
+
+		<%end%>	
+</tbody>
+
+	</table>

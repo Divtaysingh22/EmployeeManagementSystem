@@ -1,0 +1,37 @@
+<table>
+	<thead>
+		<th>Department Name  </th>
+		<th>Department Type  </th>
+        <th>Member Strength  </th>
+        <th>Description  </th>
+
+		
+	</thead>
+	<tbody>
+		<%-@departments.each do |emp|%>
+		<tr>
+			<td><%=emp.department_name%></td>
+            <td><%=emp.department_type%></td>
+
+
+            <td><%=emp.member_strength%></td>
+
+			<td><%=emp.description%></td>
+			
+			<td><%=link_to "Remove", department_path(emp), method: :delete %>
+				</td>
+
+			<td><%=link_to "Edit", department_path(emp), method: :edit %>
+			</td>
+
+		</tr>
+
+		<%end%>
+ 	
+
+		
+	</tbody>
+
+</table>
+<br>
+<a href="/departments/new">Create Department</a>

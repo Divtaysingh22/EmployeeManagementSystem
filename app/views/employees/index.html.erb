@@ -1,0 +1,25 @@
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Age</th>
+		<th>Department</th>
+		<th>Project Name</th>
+	</thead>
+	<tbody>
+		<%-@dev.each do |emp|%>
+		<tr>
+			<td><%=emp.name%></td>
+			<td><%=emp.last_name%></td>
+			<td><%=emp.age%></td>
+			<td><%=emp.department.try(:department_name) %></td>
+            <td><%=emp.project.try(:project_name) %></td>
+			<td><%=link_to "Delete", employee_path(emp), method: :delete %></td>
+			<td><%=link_to "Edit", edit_employee_path(emp) %></td>
+
+		</tr>
+		<%end%>
+		
+	</tbody>
+</table>
+<a href="/employees/new", style="color: #FF33F9 ">Create Employee</a>

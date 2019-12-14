@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employeee</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Welcome to Employee Management System</h1>
+      <p>Always Ahead</p>
+    </div>
+
+    <div class="vertical-menu">
+      <a href ="/emp/home">Home</a>
+      <a href="/employees">Employee</a>
+      <a href="/projects">Project</a>
+      <a href="/departments">Department</a>
+      <a href="/contects">Contact Us</a>
+    </div>
+
+    <div class="main_content">
+      <%= yield %>
+    </div>
+  </body>
+
+</html>
